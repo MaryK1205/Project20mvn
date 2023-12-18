@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class ShopRepositoryTest {
 
     @Test
-    public void testRemoveProduct(){
+    public void testRemoveProduct() {
         ShopRepository repo = new ShopRepository();
         Product product1 = new Product(5, "Хлеб", 100);
         Product product2 = new Product(10, "Масло", 200);
@@ -16,7 +16,7 @@ public class ShopRepositoryTest {
         repo.remove(10);
 
         Product[] expected = {product1, product3};
-        Product[] actual =repo.findAll();
+        Product[] actual = repo.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -24,7 +24,7 @@ public class ShopRepositoryTest {
 
     @Test
 
-    public void testRemoveProductNotAvaible(){
+    public void testRemoveProductNotAvaible() {
         ShopRepository repo = new ShopRepository();
         Product product1 = new Product(5, "Хлеб", 100);
         Product product2 = new Product(10, "Масло", 200);
@@ -36,16 +36,13 @@ public class ShopRepositoryTest {
         repo.remove(50);
 
         Product[] expected = {product1, product3};
-        Product[] actual =repo.findAll();
-
+        Product[] actual = repo.findAll();
 
 
         Assertions.assertArrayEquals(expected, actual);
 
 
-
     }
-
 
 
 }
